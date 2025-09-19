@@ -8,7 +8,7 @@ const UserHeader = () => {
   const location = useLocation();
 
   React.useEffect(() => {
-    const { pathname } = location;
+    const pathname  = location.pathname;
     if (pathname.startsWith("/account/post")) {
       setTitle("Poste Sua Foto");
     } else if (pathname.startsWith("/account/statistics")) {
