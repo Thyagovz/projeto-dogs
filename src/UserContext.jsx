@@ -1,5 +1,6 @@
 import React from "react";
 import { TOKEN_POST, TOKEN_VALIDADE_POST, USER_GET } from "./api";
+import { useNavigate } from "react-router-dom";
 
 export const UserContext = React.createContext();
 
@@ -8,6 +9,7 @@ export const UserStorage = ({ children }) => {
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  const navigate = useNavigate();
 
   const userLogout = React.useCallback(async function () {
     setData(null);
@@ -33,7 +35,7 @@ export const UserStorage = ({ children }) => {
       const tokenRes = await fetch(url, options);
 
       console.log(tokenRes);
-      if (!tokenRes.ok) throw new Error('Error :"Usuário inválido"');
+      if (!tokenRes.ok) throw new Error("Error :'Usuário inválido'");
       const { token } = await tokenRes.json();
       window.localStorage.setItem("token", token);
       await getUser(token);
