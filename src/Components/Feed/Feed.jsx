@@ -2,7 +2,7 @@ import React from "react";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 
-const Feed = ({ user }) => {
+const Feed = ({ user = 0 }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
   const [pages, setPages] = React.useState([1, 2, 3]);
   const [infinite, setInfinite] = React.useState(true);
