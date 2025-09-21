@@ -35,7 +35,6 @@ export default [
       "no-unsafe-finally": "off",
       "no-unused-vars": "off",
       "react/jsx-key": "off",
-      // Exemplo de regras Prettier-like
       semi: ["warn", "always"],
       quotes: ["warn", "double"],
       indent: ["warn", 2],
@@ -45,5 +44,8 @@ export default [
         version: "detect",
       },
     },
+  },
+  {
+    ignores: ["dist/**", "node_modules/**"],
   },
 ];
