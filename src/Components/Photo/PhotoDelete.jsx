@@ -12,7 +12,6 @@ const PhotoDelete = ({ id }) => {
       const token = window.localStorage.getItem("token");
       const { url, options } = PHOTO_DELETE(id, token);
       const { response } = await request(url, options);
-      console.log(response);
       if (response.ok) window.location.reload();
     }
   }

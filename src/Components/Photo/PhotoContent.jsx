@@ -17,8 +17,6 @@ const PhotoContent = ({ data, single }) => {
       <div className={styles.details}>
         <div>
           <p className={styles.author}>
-            {console.log("User:", user.data)}
-            {console.log("Photo author:", photo.author)}
             {user.data && user.data.username === photo.author ? (
               <PhotoDelete id={photo.id} />
             ) : (
