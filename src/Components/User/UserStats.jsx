@@ -11,8 +11,7 @@ const UserStats = () => {
 
   React.useEffect(() => {
     async function getData() {
-      const token = window.localStorage.getItem("token");
-      const { url, options } = STATS_GET(token);
+      const { url, options } = STATS_GET();
       await request(url, options);
     }
     getData();
@@ -27,7 +26,7 @@ const UserStats = () => {
           title="Estatísticas"
           description="Página de estatísticas do site Dogs, aqui o gráfico."
         />
-        <UserStatsGraphs />
+        <UserStatsGraphs data={data} />
       </div>
     );
   else return null;
