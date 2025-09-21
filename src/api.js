@@ -12,6 +12,7 @@ export function TOKEN_POST(body) {
     },
   };
 }
+
 export function TOKEN_VALIDADE_POST(token) {
   return {
     url: API_URL + "/jwt-auth/v1/token/validate",
@@ -136,6 +137,18 @@ export function PASSWORD_RESET(body) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function STATS_GET(token) {
+  return {
+    url: API_URL + "/api/stats",
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
     },
   };
 }
