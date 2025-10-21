@@ -77,7 +77,6 @@ Ideal para demonstrar componentes reutilizáveis, hooks customizados e boas prá
 
 ```powershell
 git clone <repo-url>
-cd "d:\Kenzie Academy\Projetos\Clones\projeto-dogs"
 ```
 
 2. Instale dependências:
