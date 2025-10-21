@@ -2,6 +2,8 @@
 
 Este repositório contém o projeto "Dogs" construído com React + Vite. Este README descreve o propósito do projeto, a estrutura do código, dependências e pontos que podem ser destacados.
 
+Na aplicação você poderá comentar, postar fotos, criar sua conta e interagir, a servidor reseta em 10 minutos quaisquer informação, por enquanto utilizo a api pública Dogs (back-end em desenvolvimento).
+
 ## Visão geral
 
 Projeto front-end em React que simula um feed de fotos (Dogs), com:
