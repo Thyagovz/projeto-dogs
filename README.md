@@ -1,94 +1,54 @@
-# Projeto Dogs — Portfolio
+# Dogs
 
-Este repositório contém o projeto "Dogs" construído com React + Vite. Este README descreve o propósito do projeto, a estrutura do código, dependências e pontos que podem ser destacados.
+Uma plataforma moderna de rede social voltada para entusiastas de animais de estimação, focada em performance e experiência do usuário fluida através de tecnologias frontend avançadas.
 
-Na aplicação você poderá comentar, postar fotos, criar sua conta e interagir, a servidor reseta em 10 minutos quaisquer informação, por enquanto utilizo a api pública Dogs (back-end em desenvolvimento).
+---
 
-## Visão geral
+### Stack Tecnológica
 
-Projeto front-end em React que simula um feed de fotos (Dogs), com:
+A arquitetura do projeto foi planejada para garantir escalabilidade e uma interface altamente reativa. Abaixo, as principais tecnologias e o porquê de suas escolhas:
 
-- Feed paginado de fotos
-- Modal para visualização de imagem e detalhes
-- Upload de imagens e formulários (login/registro)
-- Rotas SPA e gerenciamento de usuário via Context
-- Hooks customizados para abstração de lógica
+* **React 19**: Utilizado como núcleo da aplicação para aproveitar o novo sistema de renderização e otimizações de hooks, garantindo uma manipulação eficiente do DOM e estado da UI.
+* **Vite**: Escolhido como ferramenta de build devido ao seu HMR (Hot Module Replacement) extremamente rápido e pipeline de build otimizado baseado em ES Modules.
+* **Victory**: Implementado para a visualização de dados e estatísticas. Sua escolha deve-se à flexibilidade na criação de gráficos modulares e suporte nativo a interações complexas dentro do ecossistema React.
+* **React Router 7**: Responsável pelo gerenciamento de rotas e navegação SPA. Utilizado para garantir uma navegação sem recarregamento de página, essencial para a experiência de aplicativo web moderno.
+* **CSS Modules**: Adotado para o escopo local de estilos, prevenindo conflitos e garantindo que o design permaneça modular e fácil de manter conforme o projeto cresce.
+* **Context API**: Utilizada para o gerenciamento de estado global (autenticação e dados do usuário), eliminando a necessidade de prop-drilling e mantendo a lógica de negócio centralizada e acessível.
 
-Ideal para demonstrar componentes reutilizáveis, hooks customizados e boas práticas de organização.
+### Engenharia e Performance
 
-## Tecnologias e dependências principais
+O projeto aplica diversos conceitos de **Creative Development** e otimização de performance para entregar uma experiência interativa:
 
-- React + Vite
-- React Router (rotas)
-- CSS Modules para estilos isolados
-- Ferramentas de build e scripts via npm
+* **Gerenciamento de Estado**: Fluxo de autenticação robusto via JWT, com persistência em LocalStorage e revalidação automática de tokens.
+* **Interações em Tempo Real**: Feed dinâmico com carregamento infinito e atualização de comentários sem refresh, priorizando o feedback imediato ao usuário.
+* **Animações e Micro-interações**: Uso de transições CSS otimizadas (`animeLeft`, `scaleUp`) e componentes Skeleton para reduzir a percepção de tempo de carregamento e guiar o foco visual.
+* **Otimização de Imagens**: Carregamento lazy-loading e tratamento de estados de erro/carregamento para garantir que a interface permaneça estável durante o consumo de dados da API.
 
-## Estrutura do projeto (pontos-chave)
+### Funcionalidades
 
-- index.html — HTML base
-- vite.config.js — configuração do Vite
-- vercel.json — configuração de rewrite para SPA (deploy Vercel)
-- src/
-  - main.jsx — entrada da aplicação
-  - App.jsx — componente raiz com rotas
-  - api.js — abstração/integração com backend/API
-  - UserContext.jsx — contexto para autenticação/usuário
-  - App.css — estilos globais
-  - Components/ — pasta com componentes e páginas
-    - Header.jsx, Footer.jsx
-    - Home.jsx, NotFound.jsx
-    - Feed/
-      - Feed.jsx, FeedPhotos.jsx, FeedModal.jsx, FeedPhotosItem.jsx
-    - Forms e páginas de usuário, login e upload
-  - Hooks/
-    - useFetch.jsx — fetch e estados de carregamento/erro
-    - useForm.jsx — gerenciamento de formulários
-    - useMedia.jsx — resposta a media queries
+* **Autenticação Completa**: Login, criação de conta e recuperação de senha.
+* **Feed Personalizado**: Visualização de fotos, contagem de visualizações e comentários.
+* **Perfil do Usuário**: Estatísticas detalhadas de engajamento e gerenciamento de postagens.
+* **Postagem de Fotos**: Upload e integração com API REST para gerenciamento de conteúdo.
 
-## Componentes e hooks importantes
+### Instalação e Execução
 
-- Header, Footer — layout e navegação
-- Feed, FeedPhotos, FeedModal — galeria e modal de imagem
-- FeedPhotosItem — item da galeria (imagem, likes, comentários)
-- useFetch — lógica de requisições reutilizável (paginação, cache simples)
-- useForm — validação e controle de inputs
-- UserContext — provider para estado de usuário e autenticação
+Para rodar o projeto localmente, siga os passos abaixo:
 
-## Estilos
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-- CSS Modules para componentes específicos (ex.: Footer.module.css, Header.module.css, FeedModal.module.css)
-- App.css para estilos globais e resets
+2. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-## API e Autenticação
+3. O projeto estará disponível em `http://localhost:5173`.
 
-- Padrão de consumo centralizado em src/api.js — facilita troca de URL/base ou headers de autenticação.
-- UserContext gerencia login, logout e dados do usuário, compartilhando com componentes via contexto.
+---
 
-## Pontos para destacar no portfólio
+**Observações**: Este projeto foi desenvolvido com foco em boas práticas de engenharia de software frontend, visando um código limpo, componentização inteligente e alta performance.
 
-- Componentização clara e reutilização de componentes.
-- Hooks customizados para separar lógica de apresentação.
-- Uso de Context para gerenciamento de usuário.
-- Estrutura de pastas organizada para escala.
-- Adaptação responsiva via useMedia e CSS Modules.
-- Preparado para deploy moderno (Vercel/Vite).
-
-## Como rodar localmente
-
-1. Clone o repositório e entre na pasta do projeto:
-
-```powershell
-git clone <repo-url>
-```
-
-2. Instale dependências:
-
-```powershell
-npm install
-```
-
-3. Rode o servidor de desenvolvimento:
-
-```powershell
-npm run dev
-```
+Para mais informações ou colaborações, entre em contato através dos canais oficiais do repositório.
